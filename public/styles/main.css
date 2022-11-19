@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* button design framework from this website */
+/* https://getcssscan.com/css-buttons-examples */
+/* CSS */
+.button-85 {
+  padding: 0.6em 2em;
+  margin: 5px 0;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: rgb(79, 163, 186);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #9bf7ff,
+    #00d9ff,
+    #0173ff,
+    #8ca9ab,
+    #00ffd5,
+    #2e3768,
+    #7a00ff,
+    #44709c,
+    #f676fb
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 121, 140);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+form * {
+    color: rgb(0, 0, 0)
+}
+
+label {
+    color: rgb(0, 0, 0);
+}
+
+a {
+    text-decoration: none;
+    color: lightblue;
+}
+
+a:visited {
+    color: #FFFFFF;
+}
+
+a:hover {
+    color: grey;
+}
+
+body {
+    background-image: linear-gradient( 109.6deg, rgba(255, 211, 233, 0.5) 11.2%, rgba(255, 167, 211, 0.5) 91.1% );
+    color: black;
+    text-align: left;
+    padding: 40px 0;
+}
+
+img {
+  border-radius: 10%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #131921;
+    color: #FFFFFF;
+}
+
+.headerListItem {
+    display: inline-block;
+    margin: 0 calc(5vw + 20px);
+}
+
+
+footer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #232F3E;
+  color: white;
+  text-align: center;
+}

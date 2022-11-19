@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+
+<body>
+    <nav>
+        <%- include ('./partials/nav.ejs') %>
+    </nav>
+    <div class="flex-container">
+        <form action="/product/" method="post">
+            <input type="text" name="name" placeholder="name" required />
+            <input type="text" name="description" placeholder="Description" required />
+            <input type="number" name="price" placeholder="price" required />
+            <input type="text" name="image"
+                value="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" />
+            <button class="button-85" type="submit">Create Product</button>
+        </form>
+    </div>
+</body>
+
+</html>

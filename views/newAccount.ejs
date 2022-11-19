@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+
+<body>
+    <nav>
+        <%- include ('./partials/nav.ejs') %>
+    </nav>
+    <div class="flex-container">
+        <form action="/account/" method="post">
+            <input type="text" name="username" placeholder="username" required />
+            <input type="text" name="password" placeholder="password" required />
+            <button class="button-85" type="submit">Create Account</button>
+        </form>
+    </div>
+</body>
+
+</html>

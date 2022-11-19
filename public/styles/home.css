@@ -1,0 +1,23 @@
+#product-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+#product {
+    margin: 2%;
+    padding: 2%;
+    background-color: beige;
+    border-radius: 5%;
+  }
+  
+  #productName {
+    font-size: 26.33px;
+  }
+  
+  .productDetail {
+    font-size: 16.33px;
+  }

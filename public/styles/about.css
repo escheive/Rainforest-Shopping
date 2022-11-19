@@ -1,0 +1,11 @@
+#flex-container {
+    margin: 2%;
+}
+
+h2 {
+    font-size: calc(3vw + 15px);
+}
+
+p {
+    font-size: calc(2vw + 10px);
+}

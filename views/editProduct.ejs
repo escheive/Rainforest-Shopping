@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/styles/edit.css" />
+</head>
+
+<body>
+    <nav>
+        <%- include ('./partials/nav.ejs') %>
+    </nav>
+    <form action="/product/<%= product._id %>?_method=put" method="post">
+        <table class="flex-container">
+            <tr class="editInput">
+                <td><label for="name">Name:</label></td>
+                <td><input type="text" name="name" value="<%= product.name %>" required /></td>
+            </tr>
+
+            <tr class="editInput">
+                <td><label for="price">Price:</label></td>
+                <td><input type="number" name="price" value="<%= product.price %>" required /></td>
+            </tr>
+
+            <tr class="editInput">
+                <td><label for="quantity">Quantity:</label></td>
+                <td><input type="number" name="quantity" value="<%= product.quantity %>" required /></td>
+            </tr>
+
+            <tr class="editInput">
+                <td><label for="type">Product Type:</label></td>
+                <td><select id="type">
+                    <option value="foods">Food</option>
+                    <option value="toys">Toys</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="books">Book</option>
+                    <option value="outdoors">Outdoors</option>
+                </select></td>
+            </tr>
+
+            <tr class="editInput">
+                <td><label for="image">Image:</label></td>
+                <td><input type="text" name="image"
+                    value="<%= product.image %>" /></td>
+            </tr> 
+
+            <tr class="editInput">
+                <td><label for="description">Description:</label></td>
+                <td><textarea> <%= product.description %>" </textarea></td>
+            </tr>
+        </table>
+        <button class="button-85" type="submit">Save Changes</button>
+    </form>
+    <a href="/product/<%= product._id %>"><button class="button-85">Back</button></a>
+
+</body>
+
+</html>
