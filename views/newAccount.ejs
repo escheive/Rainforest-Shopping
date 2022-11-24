@@ -3,6 +3,7 @@
 
 <head>
     <%- include ('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/styles/signIn.css">
 </head>
 
 <body>
@@ -10,12 +11,20 @@
         <%- include ('./partials/nav.ejs') %>
     </nav>
     <div class="flex-container">
-        <form action="/account/" method="post">
-            <input type="text" name="username" placeholder="username" required />
-            <input type="text" name="password" placeholder="password" required />
+        <form action="/user/" method="post">
+            <h1>Create Account</h1>
+            <h4>Your name</h4>
+            <input type="text" name="name" placeholder="First and last name" required />
+            <h4>Email</h4>
+            <input type="text" name="email" placeholder="youremail@email.com" required />
+            <h4>Password</h4>
+            <input type="text" name="password" placeholder="At least 6 characters" required />
+            <h4>Re-enter password</h4>
+            <input type="text" name="password2" placeholder="Re-enter password" required />
             <button class="button-85" type="submit">Create Account</button>
         </form>
     </div>
+    <%- include ('./partials/footer.ejs') %>
 </body>
 
 </html>

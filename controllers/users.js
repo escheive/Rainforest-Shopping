@@ -9,6 +9,20 @@ router.get('/new', (req, res) => {
     })
 })
 
+router.get('/signIn', (req, res) => {
+    res.render('signIn', {
+        tabTitle: "SignIn"
+    })
+})
+
+router.get('/', (req, res) => {
+    res.render('account', {
+        username: req.query.username,
+        password: req.query.password,
+        tabTitle: "/"
+    })
+})
+
 // show route
 router.get('/username', (req, res) => {
 	db.Account.findOne({ 'username': req.account.username._id}, (err, product) => {
@@ -21,9 +35,9 @@ router.get('/username', (req, res) => {
 })
 
 //create account route
-router.post('/account', (req, res) => {
-    db.Account.create(req.body, (err, account) => {
-        res.redirect('/account')
+router.post('/', (req, res) => {
+    db.Account.create(req.body, (err, accounts) => {
+        res.redirect('/user/signIn')
     })
 })
 

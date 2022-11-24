@@ -60,8 +60,10 @@ router.get('/:id/edit', (req, res) => {
 // buy route
 
 router.post('/:id/buy', (req,res) => {
-	db.Product.findByIdAndUpdate(req.params.id, {$inc: {'quantity': -1}}, (err, product) => {
-		res.redirect('/product/'+ product._id)})
+	db.Cart.findByIdAndUpdate(req.body.cartId, {$inc: {'quantity': -1}}, (err, product) => {
+		$push: { products: req.body} },
+		{ new: true },
+		res.redirect('/product/'+ product._id))
 })
 
 module.exports = router

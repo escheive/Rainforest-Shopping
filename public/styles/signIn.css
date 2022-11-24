@@ -1,0 +1,26 @@
+.flex-container {
+    margin: 10% 0;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 25%;
+    max-width: 200px;
+    text-align: left;
+}
+
+h4 {
+    margin-bottom: 0;
+}
+
+button {
+    margin-top: 2%;
+}
+
+body {
+    text-align: center;
+}

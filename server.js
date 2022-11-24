@@ -9,7 +9,13 @@ const methodOverride = require('method-override');
 const db = require('./models')
 // access controllers
 const productsCtrl = require('./controllers/products')
-const accountCtrl = require('./controllers/account')
+const usersCtrl = require('./controllers/users')
+const cartsCtrl = require('./controllers/cart')
+// passwords
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
+var password = "Fkdj^45ci@Jad";
+
 
 
 // ================ //
@@ -22,6 +28,32 @@ app.set('view engine', 'ejs')
 
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
+
+hash = 0
+
+bcrypt.genSalt(saltRounds, function(err, salt) {
+    bcrypt.hash(password, salt, function(err, hash) {
+        bcrypt.compare(password, hash, function(err, result) {
+            if (result) {
+                console.log("It matches!")
+            } else {
+                console.log("Invalid password!");
+            }
+            // returns result
+        });
+        console.log(hash);
+    });
+    // returns salt
+});
+
+bcrypt.compare(password, hash, function(err, result) {
+    if (result) {
+        console.log("It matches!")
+    } else {
+        console.log("Invalid password!");
+    }
+    // returns result
+});
 
 app.use((req, res, next) => {
     console.log('I run for all routes');
@@ -49,7 +81,8 @@ app.get('/about', (req, res) => {
 
 // look at controllers/products.js to handle all routes that begin with `localhost:3000/product`
 app.use('/product', productsCtrl)
-app.use('/account', accountCtrl)
+app.use('/user/', usersCtrl)
+app.use('/cart/', cartsCtrl)
 
 
 

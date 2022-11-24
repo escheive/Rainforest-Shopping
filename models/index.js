@@ -22,4 +22,6 @@ mongoose.connection.on('error', (error) => {
 
 // access models
 module.exports.Product = require('./product.js')
-module.exports.Account = require('./account.js')
+module.exports.productSchema = require('./product.js')
+module.exports.Account = require('./userModel.js')
+module.exports.Cart = require('./cart.js')

@@ -1,17 +1,18 @@
 <ul class="headerList">
     <li class="headerListItem"><a href="/">Rainforest</a></li>
     <li class="headerListItem" id="customSelect">
-        <select name="productType" id="search" onchange="location.reload()">
+        <input type="text" id="search" onkeyup="sort()" placeholder="search">
+        <!-- <select name="productType" id="filter" onchange="location.reload()">
             <option>Filter</option>
             <option value="food">Food</option>
             <option value="toys">Toys</option>
             <option value="electronics">Electronics</option>
             <option value="books">Book</option>
             <option value="outdoors">Outdoors</option>
-        </select>
+        </select> -->
     </li>
-    <li class="headerListItem"><a href="/account/new">Account</a></li>
+    <li class="headerListItem"><a href="/user/signIn">Account</a></li>
     <!-- <li class="headerListItem"><a href="/product/new">Create Product</a></li> -->
-    <li class="headerListItem"><a href="/about">About</a></li>
+    <li class="headerListItem"><a href="/cart">Cart</a></li>
     <!-- <li id="headerListItem"><a href="/contactUs">Contact Us</a></li> -->
 </ul>

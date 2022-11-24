@@ -10,22 +10,133 @@
     <nav>
         <%- include ('./partials/nav.ejs') %>
     </nav>
+    <div class="carousel">
+        <!-- previous button -->
+        <div class="box-1" onclick="carouselBack()">
+            <div class="btn btn-one">
+              <span>-</span>
+            </div>
+        </div>
+        <div class="carouselContent">
+            <% for (let product of products) { %>
+                <div class="carouselProduct">
+                    <a href="/product/<%= product._id %>">
+                        <img src = <%= product.image %> width="200" height="200">
+                        <h2 id="productName"> <%= product.name %></h2>
+                    </a>
+                </div>
+            <% } %>
+        </div>
+        <!-- next button -->
+        <div class="box-1" onclick="carouselNext()">
+            <div class="btn btn-one">
+              <span>-</span>
+            </div>
+        </div>
+    </div>
     <div id = 'product-container'>
             <% for (let product of products) { %>
                 <div id="product">
                     <img src = <%= product.image %> width="300" height="300">
                     <a href="/product/<%= product._id %>"><h2 id="productName"> <%= product.name %></h2></a>
-                    <p class="productDetail"> Price: $<%= product.price %></p>
-                    <% if(product.quantity > 0) { %>
-                        <p class="productDetail"> Quantity: <%= product.quantity %></p>
-                    <% } else { %>
-                        <p class="productDetail"> Out of Stock </p>
-                    <% } %>
                     <p class="productDetail"> <%= product.description.substring(0,35) %> ...</p>
+                    <% if(product.quantity <= 0) { %>
+                        <p class="productDetail"> Out of Stock</p>
+                    <% } else { %>
+                        <p class="productDetail"> $<%= product.price %></p>
+                    <% } %>
+                    <!-- <p class="productDetail"> <%= product.type %></p> -->
                 </div>
             <% } %>
     </div>
     <%- include ('./partials/footer.ejs') %>
 </body>
+
+<script>
+    // CAROUSEL //
+    // for carousel on about me page displaying programming languages
+
+    // make our text array
+    const productArray = document.getElementsByClassName('carouselProduct')
+
+
+    // starting places for carousel
+    let previousContentIndex = 0;
+    let currentContentIndex = 0;
+
+    const firstIndex = 0; // first index of array
+    const lastIndex = productArray.length - 1; // last index of array
+
+
+    // make next button active
+    const nextBtn = document.querySelector('#next')
+    const prevBtn = document.querySelector('#prev')
+
+    const hideOldContent = () => productArray[previousContentIndex].style.display = 'none'
+    const showNewContent = () => productArray[currentContentIndex].style.display = 'inline'
+
+    // function for rotating to the next text in carousel
+    const carouselNext = () => {
+        // see next image, old img disappears, new img appears
+        currentContentIndex += 1;
+        // reset array when we reach end
+        if(currentContentIndex > lastIndex) {
+            currentContentIndex = firstIndex
+        }
+        hideOldContent()
+        showNewContent()
+        previousContentIndex = currentContentIndex
+
+    }
+
+
+    const carouselBack = () => {
+
+        // when button clicked, show previous text in array
+
+        currentContentIndex -= 1;
+        // reset array when we reach beginning
+        if(currentContentIndex < firstIndex) {
+            currentContentIndex = lastIndex
+        }
+
+        hideOldContent()
+        showNewContent()
+        previousContentIndex = currentContentIndex
+
+    }
+
+
+    const load = () => {
+        
+        setInterval(carouselNext, 4000); // auto rotate every 2 seconds
+
+    }
+
+    function sort() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("search");
+      filter = input.value.toUpperCase();
+      container = document.getElementById("product-container");
+      products = container.getElementsByTagName("div");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < products.length; i++) {
+        productName = products[i].getElementById('productName')[0];
+        if (productName) {
+          txtValue = productName.textContent || productName.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            products[i].style.display = "";
+          } else {
+            products[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+    // for page load to start carousel on about me page
+    window.addEventListener('load', load);
+</script>
 
 </html>
