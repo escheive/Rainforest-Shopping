@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    <div id = 'product-container'>
+    <div id='product-container'>
             <% for (let product of products) { %>
                 <div id="product">
                     <img src = <%= product.image %> width="300" height="300">
@@ -115,7 +115,7 @@
 
     function sort() {
       // Declare variables
-      var input, filter, table, tr, td, i, txtValue;
+      var input, filter, productName, i, txtValue;
       input = document.getElementById("search");
       filter = input.value.toUpperCase();
       container = document.getElementById("product-container");
@@ -123,16 +123,14 @@
     
       // Loop through all table rows, and hide those who don't match the search query
       for (i = 0; i < products.length; i++) {
-        productName = products[i].getElementById('productName')[0];
-        if (productName) {
-          txtValue = productName.textContent || productName.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        productName = products[i].getElementsByTagName('h2')[0];
+        txtValue = productName.textContent || productName.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
             products[i].style.display = "";
-          } else {
+            } else {
             products[i].style.display = "none";
-          }
+            }
         }
-      }
     }
 
     // for page load to start carousel on about me page
