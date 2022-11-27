@@ -7,8 +7,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin-left: 6%;
-    margin-right: 6%;
+    margin: 0 10%;
 }
 
 #product {
@@ -97,7 +96,7 @@ body {
     height: 100%;
     z-index: 1;
     transition: all 0.3s;
-    background-color: rgba(255,255,255,0.1);
+    /* background-color: rgba(255,255,255,0.1); */
 }
 
 .btn-one:hover::after {
@@ -124,5 +123,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: aliceblue;
+    background: rgba(247, 247, 244, 0.821);
+    background: linear-gradient(90deg, rgba(255, 251, 213, 0.4) 10%, rgba(178, 10, 44, 0.4) 90%);
 }
