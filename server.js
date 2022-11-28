@@ -90,5 +90,5 @@ app.use('/cart/', cartsCtrl)
 
 // listener_____
 app.listen(PORT, () => {
-    console.log(`App is running at localhost:${port}`)
+    console.log(`App is running at localhost:${PORT}`)
 }) 
