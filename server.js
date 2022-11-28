@@ -3,7 +3,6 @@
 // ================== //
 const express = require('express')
 const app = express()
-const port = 3000
 const methodOverride = require('method-override');
 // access models
 require('dotenv').config()
@@ -16,6 +15,7 @@ const cartsCtrl = require('./controllers/cart')
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 var password = "Fkdj^45ci@Jad";
+const PORT = process.env.PORT
 
 
 
@@ -89,6 +89,6 @@ app.use('/cart/', cartsCtrl)
 
 
 // listener_____
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log(`App is running at localhost:${port}`)
 }) 
