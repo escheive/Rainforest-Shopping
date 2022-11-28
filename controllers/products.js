@@ -59,7 +59,7 @@ router.get('/:id/edit', (req, res) => {
 
 // buy route
 
-router.post('/:id/buy', (req,res) => {
+router.post('/:id/buy', async (req,res) => {
 	db.Cart.findByIdAndUpdate(req.body.cartId, {$inc: {'quantity': -1}}, (err, product) => {
 		$push: { products: req.body} },
 		{ new: true },

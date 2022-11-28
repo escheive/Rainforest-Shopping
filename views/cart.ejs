@@ -3,7 +3,7 @@
 
 <head>
     <%- include ('./partials/head.ejs') %>
-    <link rel="stylesheet" href="/styles/showProduct.css" />
+    <link rel="stylesheet" href="/styles/cart.css" />
 </head>
 
 <body>
@@ -12,27 +12,9 @@
     </nav>
     <div class="flex-container">
         <div id="product">
-            <img src=<%=product.image %> width="300"/>
-            <h1>
-                <%=product.name%>
-            </h1>
-            <p>
-                Description: <%= product.description %>
-            </p>
-                <% if(product.quantity > 0) { %>
-                    Quantity: <%= product.quantity %>
-                    <form action="/product/<%= product._id %>/buy" method ="post"> <button class="button-85" type ="submit">Buy</button></form>
-                <% } else { %>
-                    <p class="productDetail"> Out of Stock </p>
-                <% } %>
-            <p>
-                Price: $<%= product.price %>
-            </p>
+            <h1>This is your cart!</h1>
         </div>
-        <a href="/product/<%= product._id %>/edit"><button class="button-85">Edit Product</button></a>
-        <form action="/product/<%= product._id %>?_method=delete" method="post">
-            <button class="button-85" type="submit">Delete Product</button>
-        </form>
+        
     </div>
     <%- include ('./partials/footer.ejs') %>
 </body>
