@@ -12,10 +12,14 @@ router.get('/new', (req, res) => {
 // show route
 router.get('/:id', (req, res) => {
 	db.Product.findById(req.params.id, (err, product) => {
-		// res.send(product)
-		res.render('showProduct', {
-			product: product,
-			tabTitle: "Product page"
+		type = product.type
+		db.Product.find({ type: type }, (err, similarProducts) => {
+			// res.send(product)
+			res.render('showProduct', {
+				product: product,
+				similarProducts: similarProducts,
+				tabTitle: "Product page"
+			})
 		})
 	})
 })
@@ -59,11 +63,10 @@ router.get('/:id/edit', (req, res) => {
 
 // buy route
 
-router.post('/:id/buy', async (req,res) => {
-	db.Cart.findByIdAndUpdate(req.body.cartId, {$inc: {'quantity': -1}}, (err, product) => {
-		$push: { products: req.body} },
-		{ new: true },
-		res.redirect('/product/'+ product._id))
+router.post('/:id/buy', (req,res) => {
+	db.Product.findByIdAndUpdate(req.params.id, {$inc: {'quantity': -1}}, (err, product) => {
+		res.redirect('/product/'+ product._id)
+	})
 })
 
 module.exports = router

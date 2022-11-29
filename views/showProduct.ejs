@@ -10,29 +10,45 @@
     <nav>
         <%- include ('./partials/nav.ejs') %>
     </nav>
-    <div class="flex-container">
-        <div id="product">
-            <img src=<%=product.image %> width="300"/>
-            <h1>
-                <%=product.name%>
-            </h1>
-            <p>
-                Description: <%= product.description %>
-            </p>
-                <% if(product.quantity > 0) { %>
-                    Quantity: <%= product.quantity %>
-                    <form action="/product/<%= product._id %>/buy" method ="post"> <button class="button-85" type ="submit">Buy</button></form>
-                <% } else { %>
-                    <p class="productDetail"> Out of Stock </p>
-                <% } %>
-            <p>
-                Price: $<%= product.price %>
-            </p>
+    <div class="allProducts">
+        <div class="flex-container">
+            <div id="product">
+                <img class="flexItem" src=<%=product.image %> width="300"/>
+                <div class="flexItem" id="productInfo">
+                    <h1>
+                        <%=product.name%>
+                    </h1>
+                    <p>
+                        Description: <%= product.description %>
+                    </p>
+                        <% if(product.quantity > 0) { %>
+                            Quantity: <%= product.quantity %>
+                            <form action="/product/<%= product._id %>/buy" method ="post"> <button class="button-85" type ="submit">Buy</button></form>
+                        <% } else { %>
+                            <p class="productDetail"> Out of Stock </p>
+                        <% } %>
+                    <p>
+                        Price: $<%= product.price %>
+                    </p>
+                </div>
+            </div>
+            <a href="/product/<%= product._id %>/edit"><button class="button-85">Edit Product</button></a>
+            <form action="/product/<%= product._id %>?_method=delete" method="post">
+                <button class="button-85" type="submit">Delete Product</button>
+            </form>
         </div>
-        <a href="/product/<%= product._id %>/edit"><button class="button-85">Edit Product</button></a>
-        <form action="/product/<%= product._id %>?_method=delete" method="post">
-            <button class="button-85" type="submit">Delete Product</button>
-        </form>
+        <div class="similarProducts">
+            <% for (let similarProduct of similarProducts) { %>
+                <% if ( similarProduct.name !== product.name ) { %>
+                    <div class="simProduct">
+                        <a href="/product/<%= similarProduct._id %>">
+                            <img src = <%= similarProduct.image %> width="200" height="200">
+                        <h2 id="productName"> <%= similarProduct.name %></h2>
+                        </a>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
     </div>
     <%- include ('./partials/footer.ejs') %>
 </body>

@@ -1,4 +1,18 @@
-.flex-container {
-    margin-top: 5%;
-    margin-left: 5%;
+.allProducts {
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 5% 0 5%;
+}
+
+#product {
+    display: flex;
+    flex-basis: 0;
+}
+
+.similarProducts {
+    flex-basis: 0;
+}
+
+img {
+    margin-right: 5%;
 }

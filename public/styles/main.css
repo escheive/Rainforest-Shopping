@@ -13,7 +13,7 @@ label {
 
 a {
     text-decoration: none;
-    color: blue;
+    color: black;
 }
 
 nav a {
@@ -33,6 +33,7 @@ body {
 
 img {
   border-radius: 10%;
+  border: 8px solid rgba(255, 230, 194, 0.4);
 }
 
 nav {

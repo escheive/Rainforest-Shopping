@@ -12,9 +12,9 @@
     </nav>
     <div class="carousel">
         <!-- previous button -->
-        <div class="box-1" onclick="carouselBack()">
+        <div class="box-1" onclick="carouselNext()">
             <div class="btn btn-one">
-              <span>-</span>
+              <span>Back</span>
             </div>
         </div>
         <div class="carouselContent">
@@ -28,9 +28,9 @@
             <% } %>
         </div>
         <!-- next button -->
-        <div class="box-1" onclick="carouselNext()">
+        <div class="box-1" onclick="carouselBack()">
             <div class="btn btn-one">
-              <span>-</span>
+              <span>Next</span>
             </div>
         </div>
     </div>
@@ -109,7 +109,7 @@
 
     const load = () => {
         
-        setInterval(carouselNext, 4000); // auto rotate every 2 seconds
+        setInterval(carouselBack, 4000); // auto rotate every 2 seconds
 
     }
 

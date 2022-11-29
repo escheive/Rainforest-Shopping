@@ -3,19 +3,47 @@
 
 <head>
     <%- include ('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/styles/edit.css">
 </head>
 
 <body>
     <nav>
         <%- include ('./partials/nav.ejs') %>
     </nav>
-    <div class="flex-container">
+    <h1>Add your product to sell</h1>
         <form action="/product/" method="post">
-            <input type="text" name="name" placeholder="name" required />
-            <input type="text" name="description" placeholder="Description" required />
-            <input type="number" name="price" placeholder="price" required />
-            <input type="text" name="image"
-                value="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" />
+            <table class="flex-container">
+                <tr>
+                    <td><input type="text" name="name" placeholder="name" required /></td>
+                </tr>
+
+                <tr>
+                    <td><input type="text" name="description" placeholder="Description" required /></td>
+                </tr>
+
+                <tr>
+                    <td><input type="number" name="price" placeholder="price" required /></td>
+                </tr>
+
+                <tr>
+                    <td><input type="number" name="quantity" placeholder="quantity" required /></td>
+                </tr>
+
+                <tr>
+                    <td><select id="type">
+                        <option value="foods">Food</option>
+                        <option value="toys">Toys</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="books">Book</option>
+                        <option value="outdoors">Outdoors</option>
+                    </select></td>
+                </tr>
+
+                <tr>
+                    <td><input type="text" name="image"
+                    value='https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101028/112815904-no-image-available-icon-flat-vector-illustration.jpg' /></td>
+                </tr>
+            </table>
             <button class="button-85" type="submit">Create Product</button>
         </form>
     </div>

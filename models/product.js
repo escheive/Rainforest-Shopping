@@ -9,7 +9,6 @@ const productSchema = new Schema(
         quantity: {type: Number},
         type: {type: String},
         purchases: {type: Number},
-        SKU: {type: Number},
         image: {type: String, default: 'https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101028/112815904-no-image-available-icon-flat-vector-illustration.jpg'}
     }
 )
