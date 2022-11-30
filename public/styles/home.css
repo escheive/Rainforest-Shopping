@@ -126,3 +126,16 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+@media only screen and (max-width: 600px) {
+    #product {
+    width: 170px;
+    height: 250px;
+    }
+    #productName {
+        font-size: 15px;
+    }
+    .productDetail {
+        font-size: 10px;
+    }
+}
