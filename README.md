@@ -31,6 +31,24 @@ I took the approach of creating an e-commerce site similar to Amazon. I wanted a
 #To install, download files into a directory together. either host on a personal server or upload to an online server or visit the site online.
 
 
+### Route Table ###
+
+|       **URL**       | **HTTP Verb** | **REST Action** | **CRUD Action** |   **EJS View**   | **Models Affected** | **Created Yet?**  |
+| ------------------- | ------------- | --------------- | --------------- | ---------------- | ------------------- | ----------------- |
+| /                   | GET           | index           | read            | home.ejs         | product             | YES               |
+| /product/:id        | GET           | show            | read            | showProduct.ejs  | product, review     | YES               |
+| /product/new        | GET           | new             | read            | newProduct.ejs   | product             | YES               |
+| /product/:id        | POST          | create          | create          | showProduct.ejs  | product, review     | YES               |
+| /product/:id/edit   | GET           | edit            | read            | editProduct.ejs  | product             | YES               |
+| /product/:id        | PATCH/PUT     | update          | update          |                  | product             | YES               |
+| /product/:id        | DELETE        | destroy         | delete          |                  | product             | YES               |
+| /product/:id/buy    | POST          | create          | read            | showProduct.ejs  | product             | YES               |
+| /review             | POST          | new             | create          | showProduct.ejs  | review              | YES               |
+| /user/new           | GET           | show            | read            | newAccount.ejs   | user                | YES               |
+| /user/signIn        | GET           | show            | read            | signIn.ejs       | user                | YES               |
+| /user               | GET           | show            | read            | account.ejs      | user                | YES               |
+| /user               | POST          | create          | create          | signIn.ejs       | user                | YES               |
+
 
 ### User Stories ###
 
