@@ -5,10 +5,6 @@ const Schema = mongoose.Schema
 // build schema for reviews collection
 const reviewSchema = new Schema(
     {
-        title: {
-            type: String,
-            required: true
-        },
         body: {
             type: String,
             required: true
