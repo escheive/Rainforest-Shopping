@@ -1,5 +1,6 @@
 const db = require('./')
 
+
 const seed_products = [
     {
         name: 'Beans',
@@ -7,6 +8,7 @@ const seed_products = [
         type: 'foods',
         price: 5,
         quantity: 99,
+        reviews: [],
         image: "https://www.seriouseats.com/thmb/mZn4RCinpBV-ONNkvMabIGq4rJY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2016__07__20160707-legumes-red-kidney-beans-vicky-wasik-4-7835e58628a94f3fba1ad8d2defc3137.jpg"
     }, {
         name: 'Toy Car',
@@ -14,6 +16,7 @@ const seed_products = [
         type: 'toys',
         price: 25,
         quantity: 0,
+        reviews: [],
         image: "https://m.media-amazon.com/images/I/41dx+mGmfgL._AC_.jpg"
     }, {
         name: 'Barry Botter',
@@ -21,6 +24,7 @@ const seed_products = [
         type: 'books',
         price: 7000,
         quantity: 1,
+        reviews: [],
         image: "https://th-thumbnailer.cdn-si-edu.com/x33MSpps0XoKiZCE1Z6vofJwXTM=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/blogging/featured/A_green_and_white-spotted_lizard_on_orange_surface.jpg"
     }, {
         name: 'Lettuce',
@@ -28,6 +32,7 @@ const seed_products = [
         type: 'foods',
         price: 6,
         quantity: 99,
+        reviews: [],
         image: "https://cdn.britannica.com/77/170677-050-F7333D51/lettuce.jpg"
     }, {
         name: 'Turnips',
@@ -35,6 +40,7 @@ const seed_products = [
         type: 'foods',
         price: 7,
         quantity: 122,
+        reviews: [],
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Turnip_2622027.jpg/800px-Turnip_2622027.jpg"
     }, {
         name: 'Cucumber',
@@ -42,6 +48,7 @@ const seed_products = [
         type: 'foods',
         price: 8,
         quantity: 144,
+        reviews: [],
         image: "https://upload.wikimedia.org/wikipedia/commons/9/96/ARS_cucumber.jpg"
     }, {
         name: 'Pickle',
@@ -49,6 +56,7 @@ const seed_products = [
         type: 'foods',
         price: 4,
         quantity: 33,
+        reviews: [],
         image: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Pickle.jpg"
     }, {
         name: 'Burger',
@@ -56,6 +64,7 @@ const seed_products = [
         type: 'foods',
         price: 13,
         quantity: 65,
+        reviews: [],
         image: "https://media-cdn.tripadvisor.com/media/photo-s/18/9c/13/fb/top-rated-in-seattle.jpg"
     }, {
         name: 'Toy Burger',
@@ -63,6 +72,7 @@ const seed_products = [
         type: 'toys',
         price: 10,
         quantity: 91,
+        reviews: [],
         image: "https://m.media-amazon.com/images/I/41LV9R7zGYL._AC_SY580_.jpg"
     }, {
         name: 'Wind Pigs Helicopter',
@@ -70,6 +80,7 @@ const seed_products = [
         type: 'toys',
         price: 43,
         quantity: 16,
+        reviews: [],
         image: "https://m.media-amazon.com/images/I/41p60212sgL._AC_.jpg"
     }, {
         name: 'Famished Events',
@@ -77,6 +88,7 @@ const seed_products = [
         type: 'books',
         price: 8,
         quantity: 31,
+        reviews: [],
         image: "https://dictionary.cambridge.org/fr/images/thumb/book_noun_001_01679.jpg?version=5.0.275"
     }, {
         name: 'Resurrecting a Mockingbird',
@@ -84,6 +96,7 @@ const seed_products = [
         type: 'books',
         price: 21,
         quantity: 32,
+        reviews: [],
         image: "https://img.freepik.com/free-vector/open-blue-book-white_1308-69339.jpg?w=2000"
     }, {
         name: 'Bom Baywer',
@@ -91,6 +104,7 @@ const seed_products = [
         type: 'books',
         price: 7,
         quantity: 233,
+        reviews: [],
         image: "https://d2j6dbq0eux0bg.cloudfront.net/images/24595415/1297476103.jpg"
     }, {
         name: `Dante's Fire`,
@@ -98,6 +112,7 @@ const seed_products = [
         type: 'books',
         price: 16,
         quantity: 25,
+        reviews: [],
         image: "https://damonza.com/wp-content/uploads/2018/07/shutterstock_540163171.jpg"
     }, {
         name: `Mego Blocks`,
@@ -105,6 +120,7 @@ const seed_products = [
         type: 'toys',
         price: 11,
         quantity: 34,
+        reviews: [],
         image: "https://cdn.britannica.com/48/182648-050-6C20C6AB/LEGO-bricks.jpg"
     }, {
         name: `Mouse`,
@@ -112,6 +128,7 @@ const seed_products = [
         type: 'electronics',
         price: 44,
         quantity: 12,
+        reviews: [],
         image: "https://m.media-amazon.com/images/I/31aLihyOu-L._AC_.jpg"
     }, {
         name: `Christmas Lights`,
@@ -119,6 +136,7 @@ const seed_products = [
         type: 'electronics',
         price: 11,
         quantity: 22,
+        reviews: [],
         image: "https://m.media-amazon.com/images/I/616cPsYMtsL._AC_.jpg"
     }, {
         name: `Coconut Water`,
@@ -126,6 +144,7 @@ const seed_products = [
         type: 'foods',
         price: 6,
         quantity: 55,
+        reviews: [],
         image: "https://post.healthline.com/wp-content/uploads/2021/08/coconut-water-1200x628-facebook-1200x628.jpg"
     }, {
         name: `Laptop`,
@@ -133,6 +152,7 @@ const seed_products = [
         type: 'electronics',
         price: 454,
         quantity: 33,
+        reviews: [],
         image: "https://www.renderhub.com/laserfase/generic-laptop/generic-laptop-01.jpg"
     }, {
         name: `Desktop`,
@@ -140,6 +160,7 @@ const seed_products = [
         type: 'electronics',
         price: 889,
         quantity: 10,
+        reviews: [],
         image: "https://atlas-content-cdn.pixelsquid.com/assets_v2/246/2469667326039955024/jpeg-600/G03.jpg?modifiedAt=1"
     }, {
         name: `Flashlight`,
@@ -147,6 +168,7 @@ const seed_products = [
         type: 'electronics',
         price: 23,
         quantity: 23,
+        reviews: [],
         image: "https://images.thdstatic.com/productImages/8b567322-2a92-4ef6-b40d-1e3419e6436d/svn/coast-handheld-flashlights-21864-64_1000.jpg"
     }, {
         name: `Headphones`,
@@ -154,6 +176,7 @@ const seed_products = [
         type: 'electronics',
         price: 87,
         quantity: 31,
+        reviews: [],
         image: "https://m.media-amazon.com/images/I/31l39jWkENL._AC_SY350_.jpg"
     },
 ]

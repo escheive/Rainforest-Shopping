@@ -53,7 +53,7 @@ router.put('/:id', (req, res) => {
 router.post('/:id', (req, res) => {
     db.Product.findByIdAndUpdate( req.params.id,
         { $push: { reviews: req.body } },
-        // { new: true },
+        { new: true },
         (err, product) => {
             res.redirect('/product/' + product._id)
         })

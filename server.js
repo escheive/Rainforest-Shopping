@@ -12,10 +12,10 @@ const productsCtrl = require('./controllers/products')
 const usersCtrl = require('./controllers/users')
 const cartsCtrl = require('./controllers/cart')
 const reviewsCtrl = require('./controllers/reviews')
-// passwords
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
-var password = "Fkdj^45ci@Jad";
+// passwords TODO
+// const bcrypt = require("bcrypt");
+// const saltRounds = 10;
+// var password = "Fkdj^45ci@Jad";
 const PORT = process.env.PORT
 
 
@@ -31,31 +31,33 @@ app.set('view engine', 'ejs')
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 
-hash = 0
 
-bcrypt.genSalt(saltRounds, function(err, salt) {
-    bcrypt.hash(password, salt, function(err, hash) {
-        bcrypt.compare(password, hash, function(err, result) {
-            if (result) {
-                console.log("It matches!")
-            } else {
-                console.log("Invalid password!");
-            }
-            // returns result
-        });
-        console.log(hash);
-    });
-    // returns salt
-});
+// TODO setup authentication
+// hash = 0
 
-bcrypt.compare(password, hash, function(err, result) {
-    if (result) {
-        console.log("It matches!")
-    } else {
-        console.log("Invalid password!");
-    }
-    // returns result
-});
+// bcrypt.genSalt(saltRounds, function(err, salt) {
+//     bcrypt.hash(password, salt, function(err, hash) {
+//         bcrypt.compare(password, hash, function(err, result) {
+//             if (result) {
+//                 console.log("It matches!")
+//             } else {
+//                 console.log("Invalid password!");
+//             }
+//             // returns result
+//         });
+//         console.log(hash);
+//     });
+//     // returns salt
+// });
+
+// bcrypt.compare(password, hash, function(err, result) {
+//     if (result) {
+//         console.log("It matches!")
+//     } else {
+//         console.log("Invalid password!");
+//     }
+//     // returns result
+// });
 
 app.use((req, res, next) => {
     console.log('I run for all routes');
