@@ -36,17 +36,19 @@
     </div>
     <div id='product-container'>
             <% for (let product of products) { %>
-                <div id="product">
-                    <img src = <%= product.image %> width="300" height="300">
-                    <a href="/product/<%= product._id %>"><h2 id="productName"> <%= product.name %></h2></a>
-                    <p class="productDetail"> <%= product.description.substring(0,35) %> ...</p>
-                    <% if(product.quantity <= 0) { %>
-                        <p class="productDetail"> Out of Stock</p>
-                    <% } else { %>
-                        <p class="productDetail"> $<%= product.price %></p>
-                    <% } %>
-                    <!-- <p class="productDetail"> <%= product.type %></p> -->
-                </div>
+                <a href="/product/<%= product._id %>">
+                    <div id="product">
+                        <img src = <%= product.image %> width="300" height="300">
+                        <h2 id="productName"> <%= product.name %></h2>
+                        <p class="productDetail"> <%= product.description.substring(0,35) %> ...</p>
+                        <% if(product.quantity <= 0) { %>
+                            <p class="productDetail"> Out of Stock</p>
+                        <% } else { %>
+                            <p class="productDetail"> $<%= product.price %></p>
+                        <% } %>
+                        <!-- <p class="productDetail"> <%= product.type %></p> -->
+                    </div>
+                </a>
             <% } %>
     </div>
     <%- include ('./partials/footer.ejs') %>
