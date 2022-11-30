@@ -11,6 +11,7 @@
 }
 
 .similarProducts {
+    margin-left: 1%;
     flex-basis: 0;
 }
 
@@ -20,6 +21,12 @@ img {
 
 form {
     display: inline-block;
+}
+
+.reviews {
+    margin-top: 2%;
+    border: 2px solid rgba(194, 175, 148, 0.4);
+    background: rgba(178, 10, 44, 0.05);
 }
 
 .postedReviews {
