@@ -41,7 +41,7 @@ router.get('/', (req, res) => {
 
 //create account route
 router.post('/', (req, res) => {
-    db.Account.create(req.body, (err, accounts) => {
+    db.User.create(req.body, (err, user) => {
         res.redirect('/user/signIn')
     })
 })
