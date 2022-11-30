@@ -40,8 +40,8 @@ I took the approach of creating an e-commerce site similar to Amazon. I wanted a
 | /product/new        | GET           | new             | read            | newProduct.ejs   | product             | YES               |
 | /product/:id        | POST          | create          | create          | showProduct.ejs  | product, review     | YES               |
 | /product/:id/edit   | GET           | edit            | read            | editProduct.ejs  | product             | YES               |
-| /product/:id        | PATCH/PUT     | update          | update          |                  | product             | YES               |
-| /product/:id        | DELETE        | destroy         | delete          |                  | product             | YES               |
+| /product/:id        | PATCH/PUT     | update          | update          | showProduct.ejs  | product             | YES               |
+| /product/:id        | DELETE        | destroy         | delete          | home.ejs         | product             | YES               |
 | /product/:id/buy    | POST          | create          | read            | showProduct.ejs  | product             | YES               |
 | /review             | POST          | new             | create          | showProduct.ejs  | review              | YES               |
 | /user/new           | GET           | show            | read            | newAccount.ejs   | user                | YES               |

@@ -28,6 +28,6 @@ const cartSchema = new Schema({
 
 );
 
+// export the model so that it is accessible in 'index.js'
 const Cart = mongoose.model('Cart', cartSchema)
-
 module.exports = Cart
