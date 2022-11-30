@@ -20,6 +20,7 @@ router.get('/:id', (req, res) => {
 		db.Product.find({ type: type }, (err, similarProducts) => {
 			res.render('showProduct', {
 				product: product,
+				reviewArray: product.reviews,
 				similarProducts: similarProducts,
 				tabTitle: "Product page"
 			})

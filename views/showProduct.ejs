@@ -42,6 +42,14 @@
                     <textarea name="body" placeholder="Leave a review for this product"></textarea>
                     <button class="button-85" type="submit">Post Review</button>
                 </form>
+                <div class="postedReviews">
+                    <% for (let review of reviewArray) { %>
+                        <div id="productReview">
+                            <h2> <%= review.body %></h2>
+                            <h4> <%= review.createdAt %></h4>
+                        </div>
+                    <% } %>
+                </div>
             </div>
         </div>
         <div class="similarProducts">

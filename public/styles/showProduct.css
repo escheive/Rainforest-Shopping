@@ -21,3 +21,18 @@ img {
 form {
     display: inline-block;
 }
+
+.postedReviews {
+    margin-top: 2%;
+}
+
+#productReview {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 5px;
+}
+
+#productReview h2 {
+    padding-right: 2vw;
+}
