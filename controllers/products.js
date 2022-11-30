@@ -14,7 +14,6 @@ router.get('/:id', (req, res) => {
 	db.Product.findById(req.params.id, (err, product) => {
 		type = product.type
 		db.Product.find({ type: type }, (err, similarProducts) => {
-			// res.send(product)
 			res.render('showProduct', {
 				product: product,
 				similarProducts: similarProducts,
@@ -49,6 +48,16 @@ router.put('/:id', (req, res) => {
 		res.redirect('/product/' + product._id)
 	})
 })
+
+// Create Route for reviews
+router.post('/:id', (req, res) => {
+    db.Product.findByIdAndUpdate( req.params.id,
+        { $push: { reviews: req.body } },
+        // { new: true },
+        (err, product) => {
+            res.redirect('/product/' + product._id)
+        })
+});
 
 
 // edit ejs route

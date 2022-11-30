@@ -36,6 +36,18 @@
             <form action="/product/<%= product._id %>?_method=delete" method="post">
                 <button class="button-85" type="submit">Delete Product</button>
             </form>
+            <div class="reviews">
+                <h2>Reviews</h2>
+                <form action="/product/<%= product._id %>" method="post">
+                    <textarea placeholder="Leave a review for this product"></textarea>
+                    <button class="button-85" type="submit">Post Review</button>
+                </form>
+            </div>
+            <div class="postedReviews">
+                <!-- <% for ( review of product.reviews ) { %> -->
+                    <p> <% product.reviews %> </p>
+                <!-- <% } %> -->
+            </div>
         </div>
         <div class="similarProducts">
             <% for (let similarProduct of similarProducts) { %>

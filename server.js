@@ -11,6 +11,7 @@ const db = require('./models')
 const productsCtrl = require('./controllers/products')
 const usersCtrl = require('./controllers/users')
 const cartsCtrl = require('./controllers/cart')
+const reviewsCtrl = require('./controllers/reviews')
 // passwords
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
@@ -80,10 +81,11 @@ app.get('/about', (req, res) => {
     })
 })
 
-// look at controllers/products.js to handle all routes that begin with `localhost:3000/product`
-app.use('/product', productsCtrl)
-app.use('/user/', usersCtrl)
-app.use('/cart/', cartsCtrl)
+// look at controllers files to handle all routes that begin with certain words
+app.use('/product', productsCtrl);
+app.use('/user/', usersCtrl);
+app.use('/cart/', cartsCtrl);
+app.use('/reviews', reviewsCtrl);
 
 
 

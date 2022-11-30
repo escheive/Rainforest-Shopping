@@ -29,6 +29,8 @@ body {
     color: black;
     text-align: left;
     padding: 40px 0;
+    background: linear-gradient(90deg, rgba(255, 251, 213, 0.4) 10%, rgba(178, 10, 44, 0.4) 90%);
+
 }
 
 img {

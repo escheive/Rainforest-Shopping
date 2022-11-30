@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const reviewSchema = require('./review.js')
 
 const productSchema = new Schema(
     {
@@ -8,7 +9,7 @@ const productSchema = new Schema(
         price: {type: Number, min: [1, `Must be at least 1, got {VALUE}`], required: true},
         quantity: {type: Number},
         type: {type: String},
-        purchases: {type: Number},
+        reviews: [reviewSchema],
         image: {type: String, default: 'https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101028/112815904-no-image-available-icon-flat-vector-illustration.jpg'}
     }
 )

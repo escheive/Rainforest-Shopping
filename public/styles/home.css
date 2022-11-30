@@ -1,5 +1,7 @@
 body {
     margin: auto;
+    background: linear-gradient(90deg, rgba(255, 251, 213, 0.4) 10%, rgba(178, 10, 44, 0.4) 90%);
+
 }
 
 #product-container {
@@ -7,7 +9,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 10%;
+    margin: 0;
 }
 
 #product {
@@ -119,10 +121,8 @@ body {
 .carousel {
     text-align: center;
     padding: 2%;
-    margin: 0 10%;
+    margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(247, 247, 244, 0.821);
-    background: linear-gradient(90deg, rgba(255, 251, 213, 0.4) 10%, rgba(178, 10, 44, 0.4) 90%);
 }
