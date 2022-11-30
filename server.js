@@ -52,8 +52,8 @@ app.get('/', (req, res) => {
 
 // look at controllers files to handle all routes that begin with certain words
 app.use('/product', productsCtrl);
-app.use('/user/', usersCtrl);
-app.use('/cart/', cartsCtrl);
+app.use('/user', usersCtrl);
+app.use('/cart', cartsCtrl);
 app.use('/reviews', reviewsCtrl);
 
 
