@@ -4,18 +4,23 @@
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override');
+
 // access models
 require('dotenv').config()
 const db = require('./models')
+
 // access controllers
 const productsCtrl = require('./controllers/products')
 const usersCtrl = require('./controllers/users')
 const cartsCtrl = require('./controllers/cart')
 const reviewsCtrl = require('./controllers/reviews')
-// passwords TODO
+
+
+// TODO; authentication and passwords
 // const bcrypt = require("bcrypt");
 // const saltRounds = 10;
 // var password = "Fkdj^45ci@Jad";
+
 const PORT = process.env.PORT
 
 
@@ -32,7 +37,7 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 
 
-// TODO setup authentication
+// TODO; setup authentication
 // hash = 0
 
 // bcrypt.genSalt(saltRounds, function(err, salt) {
@@ -59,6 +64,8 @@ app.use(express.urlencoded({ extended: true }));
 //     // returns result
 // });
 
+
+// middleware for testing
 app.use((req, res, next) => {
     console.log('I run for all routes');
     next();
@@ -77,11 +84,13 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/about', (req, res) => {
-        res.render('aboutUs.ejs', {
-            tabTitle: 'About'
-    })
-})
+
+// TODO; about us page for the website
+// app.get('/about', (req, res) => {
+//         res.render('aboutUs.ejs', {
+//             tabTitle: 'About'
+//     })
+// })
 
 // look at controllers files to handle all routes that begin with certain words
 app.use('/product', productsCtrl);

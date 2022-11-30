@@ -1,20 +1,31 @@
+##### ##### ##### ##### ##### ##### ##### ##### #####
+ ##### ##### ##### ##### ##### ##### ##### ##### #####
+  ##### ##### ##### ##### ##### ##### ##### ##### #####
+ ##### ##### ##### ##### ##### ##### ##### ##### #####
+##### ##### ##### ##### ##### ##### ##### ##### #####
+
+
+
+### This is a project created by Erik Scheive ###
+
+You can contact me at my email, scheiveerik@gmail.com
+
+
+
 ### Rainforest-Shopping ###
 
 https://rainforest-shopping-production.up.railway.app/
 
 
 
-### Screenshot ###
-
-![Screen Shot 2022-11-06 at 6 28 46 PM](https://user-images.githubusercontent.com/115295094/200214427-48eb1c75-82ea-43ca-ad0b-48bff1ce8c73.png)
-
-
 ### Technologies Used ###
-#HTML, CSS, JavaScript, nodeJS, MongoDB
-#Made using VSCode
-#Hosted using Railway
-#learned snippets of code from w3schools
+HTML, CSS, JavaScript, nodeJS, MongoDB
+Made using VSCode
+Hosted using Railway
+learned snippets of code from w3schools
 
+### My Approach ###
+I took the approach of creating an e-commerce site similar to Amazon. I wanted an app where users could search for products and interact with them. I envisioned a cart system where users could store the products until they are ready to buy, and a review system for the products as well.  
 
 ### Installation ###
 #To install, download files into a directory together. either host on a personal server or upload to an online server or visit the site online.
@@ -58,5 +69,8 @@ dynamic home page that shows popular products
 
 ### Hurdles ###
 
-#user authentication was a stretch goal that i couldn't figure out
-#Cart functionality was a stretch goal that I attempted but also couldn't get functional
+user authentication was a stretch goal that i couldn't figure out
+
+Cart functionality was a stretch goal that I attempted but also couldn't get functional
+
+Review system is a stretch goal where i set up the means to leave reviews, but still need to figure out how to display them for the products

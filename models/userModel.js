@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+// create a model for user accounts that includes name, email, and password
 const UserSchema = new Schema({
     name: {
         type: String,
@@ -25,6 +26,6 @@ const UserSchema = new Schema({
     isAdmin: Boolean
 });
 
+// export the model so that it is accessible in 'index.js'
 const User = mongoose.model('User', UserSchema);
-    
 module.exports = User;

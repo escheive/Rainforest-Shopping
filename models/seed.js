@@ -1,6 +1,6 @@
 const db = require('./')
 
-
+// file to seed database with some test products
 const seed_products = [
     {
         name: 'Beans',
@@ -181,6 +181,8 @@ const seed_products = [
     },
 ]
 
+
+// function to clear products database and then re-seed. from home project directory enter 'node models/seed.js'
 db.Product.deleteMany({}, (err, products) => {
     if (err) {
         console.log('Error occured in remove', err)
@@ -197,6 +199,8 @@ db.Product.deleteMany({}, (err, products) => {
     }
 })
 
+
+// function to reset the users database for testing
 // db.User.deleteMany({}, (err, users) => {
 //     if (err) {
 //         console.log('Error occured in remove', err)
