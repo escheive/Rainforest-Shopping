@@ -3,14 +3,21 @@
 
 <head>
     <%- include ('./partials/head.ejs') %>
-    <link rel="stylesheet" href="/styles/signIn.css">
+    <link rel="stylesheet" href="/styles/allUsers.css">
 </head>
 
 <body>
     <nav>
         <%- include ('./partials/nav.ejs') %>
     </nav>
-    <a href="/user/all">All Users</a>
+    <div class="users">
+        <% for (let user of users) { %>
+            <div id="user">
+                <h2 id="userName"> <%= user.name %></h2>
+                <h3 id="userEmail"> <%= user.email %></h3>
+            </div>
+        <% } %>
+    </div>
     <%- include ('./partials/footer.ejs') %>
 </body>
 

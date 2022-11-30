@@ -18,6 +18,16 @@ router.get('/signIn', (req, res) => {
     })
 })
 
+// route for all users page
+router.get('/all', (req, res) => {
+    db.User.find({}, (err, users) => {
+        res.render('allUsers', {
+            users: users,
+            tabTitle: 'All Users'
+        })
+    })
+})
+
 // route for account page after user signs in
 router.get('/', (req, res) => {
     res.render('account', {
