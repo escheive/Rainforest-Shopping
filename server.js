@@ -37,41 +37,6 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 
 
-// TODO; setup authentication
-// hash = 0
-
-// bcrypt.genSalt(saltRounds, function(err, salt) {
-//     bcrypt.hash(password, salt, function(err, hash) {
-//         bcrypt.compare(password, hash, function(err, result) {
-//             if (result) {
-//                 console.log("It matches!")
-//             } else {
-//                 console.log("Invalid password!");
-//             }
-//             // returns result
-//         });
-//         console.log(hash);
-//     });
-//     // returns salt
-// });
-
-// bcrypt.compare(password, hash, function(err, result) {
-//     if (result) {
-//         console.log("It matches!")
-//     } else {
-//         console.log("Invalid password!");
-//     }
-//     // returns result
-// });
-
-
-// middleware for testing
-app.use((req, res, next) => {
-    console.log('I run for all routes');
-    next();
-});
-
-
 // ================ //
 // ==== routes ==== //
 // ================ //
@@ -84,13 +49,6 @@ app.get('/', (req, res) => {
     })
 })
 
-
-// TODO; about us page for the website
-// app.get('/about', (req, res) => {
-//         res.render('aboutUs.ejs', {
-//             tabTitle: 'About'
-//     })
-// })
 
 // look at controllers files to handle all routes that begin with certain words
 app.use('/product', productsCtrl);
